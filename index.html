@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proposta de Consultoria Estratégica para Sabor Divino - Live Consultoria">
+    <title>Proposta Sabor Divino | Live Consultoria</title>
+    
+    <!-- Google Fonts: Poppins & Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* * 1. NÚCLEO DA IDENTIDADE VISUAL (TOKENS) 
+         */
+        :root {
+            /* Cores */
+            --primary-bg: #06192a;
+            --card-bg: #0A243D;
+            --accent-color: #00e800;
+            --accent-glow: 0 0 15px rgba(0, 232, 0, 0.4);
+            --text-primary: #ffffff;
+            --text-muted: #cccccc;
+            --border-color: rgba(255, 255, 255, 0.1);
+            
+            /* Tipografia */
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif;
+            
+            /* Tamanhos de Fonte */
+            --font-size-base: 1.1rem; /* Min 16px */
+            --font-size-h1: clamp(2.5rem, 5vw, 4rem);
+            --font-size-h2: clamp(2rem, 4vw, 3rem);
+            
+            /* Espaçamento */
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            
+            /* Transições */
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* * 2. RESET E ESTRUTURA GLOBAL 
+         */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Acessibilidade: Foco Visível */
+        :focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 4px;
+        }
+
+        /* * 3. COMPONENTES DE TIPOGRAFIA 
+         */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Inovação: Gradiente Animado no H1 */
+        h1.dynamic-title {
+            font-size: var(--font-size-h1);
+            background: linear-gradient(to right, #ffffff, var(--accent-color), #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+
+        /* Efeito von Restorff: Diagnóstico */
+        .diagnosis-text {
+            font-family: var(--font-secondary);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-muted);
+            border-left: 4px solid var(--accent-color);
+            padding-left: var(--space-md);
+        }
+
+        /* * 4. HEADER DINÂMICO 
+         */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(6, 25, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        header.scrolled {
+            padding: 0.5rem var(--space-md);
+            background: rgba(6, 25, 42, 0.95);
+        }
+
+        .header-logo img {
+            height: 40px;
+            width: auto;
+            transition: var(--transition-smooth);
+        }
+
+        .header-client {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* * 5. COMPONENTE CARD (.card) - Refinamento Cirúrgico 
+         */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), var(--accent-glow);
+            border-color: var(--accent-color);
+        }
+
+        /* * 6. SEÇÕES E LAYOUT 
+         */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        section {
+            padding: var(--space-xl) 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px; /* Space for fixed header */
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            /* Centralizar conteúdo após remover imagem */
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Removido a media query que dividia em duas colunas pois não há mais imagem */
+        /*
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+        */
+
+        .consultant-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+            /* Loading Lazy handled in HTML */
+        }
+
+        /* Timeline Vertical Animada */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: var(--space-lg) auto;
+        }
+
+        /* Linha Vertical Central */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+            box-shadow: var(--accent-glow);
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0; /* Para animação */
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .timeline-item .card {
+            /* Ajuste para conteúdo mais denso */
+            padding: var(--space-sm) var(--space-md);
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            text-align: left;
+            margin-top: var(--space-sm);
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .timeline-item li i {
+            margin-right: 10px;
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        .phase-price {
+            display: block;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-top: var(--space-sm);
+            font-size: 1.1rem;
+            text-align: right;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Left side */
+        .left {
+            left: 0;
+        }
+
+        /* Right side */
+        .right {
+            left: 50%;
+        }
+
+        /* Bolinhas da timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--primary-bg);
+            border: 4px solid var(--accent-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        /* Responsividade Timeline (Mobile First override) */
+        @media (max-width: 767px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::after {
+                left: 21px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+
+        /* * 7. CTA E BOTÕES 
+         */
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-bg);
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+            min-width: 44px; /* Lei de Fitts */
+            min-height: 44px;
+            box-shadow: 0 4px 15px rgba(0, 232, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        /* * 8. INVESTIMENTO 
+         */
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: var(--space-sm) 0;
+            text-shadow: var(--accent-glow);
+        }
+
+        /* * 9. FOOTER 
+         */
+        footer {
+            background-color: #000;
+            padding: var(--space-lg) 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-logo {
+            filter: grayscale(100%);
+            transition: var(--transition-smooth);
+            height: 50px;
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-logo:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Utilitários de Animação */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Dinâmico -->
+    <header id="main-header">
+        <div class="header-logo">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png" alt="Live Consultoria Logo">
+        </div>
+        <div class="header-client">PROPOSTA: SABOR DIVINO</div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="fade-in-section">
+                        <p class="text-accent" style="font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Planejamento Estratégico</p>
+                        <h1 class="dynamic-title">Sucessão Familiar & Gestão Profissional</h1>
+                        <p style="margin-top: var(--space-sm); font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">
+                            Um plano estruturado para garantir a perpetuidade da <strong>Sabor Divino</strong>, blindando o patrimônio e profissionalizando a operação para o futuro.
+                        </p>
+                        <div style="margin-top: var(--space-md);">
+                            <a href="#proposta" class="btn-cta">Visualizar Plano de Ação</a>
+                        </div>
+                    </div>
+                    <!-- Imagem do consultor removida conforme solicitado -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnóstico Estratégico (Efeito von Restorff) -->
+        <section style="background-color: rgba(255,255,255,0.02);">
+            <div class="container fade-in-section">
+                <h2 style="text-align: center; margin-bottom: var(--space-lg);">Diagnóstico Estratégico</h2>
+                
+                <div class="card">
+                    <div class="diagnosis-text">
+                        "A Sabor Divino encontra-se em um momento decisivo. A excelência do produto e a lealdade dos clientes sustentaram o negócio até aqui, mas a <strong>gestão empírica</strong> e a ausência de processos formalizados representam um risco real para a sucessão. Além disso, o cenário fiscal de 2026 exige uma reengenharia financeira imediata para evitar a perda de competitividade. O foco não é apenas crescer, mas <strong>organizar a casa para permitir o crescimento sustentável</strong>."
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg);">
+                        <div>
+                            <h3 class="text-accent" style="font-size: 1.2rem;"><i class="fas fa-exclamation-triangle"></i> Risco Sucessório</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-muted);">Falta de definição clara de papéis entre a 1ª e 2ª geração gera conflitos e insegurança operacional.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-accent" style="font-size: 1.2rem;"><i class="fas fa-file-invoice-dollar"></i> Risco Fiscal 2026</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-muted);">A mudança tributária exige DRE estruturado e fichas técnicas para evitar desenquadramento nocivo.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-accent" style="font-size: 1.2rem;"><i class="fas fa-cogs"></i> Dependência Operacional</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-muted);">Produção sem padronização (POPs) impede escala e torna a empresa refém do conhecimento tácito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plano de Ação (Linha do Tempo Vertical Animada) -->
+        <section id="proposta">
+            <div class="container">
+                <h2 style="text-align: center;">Plano de Ação M.A.P.C.A.</h2>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: var(--space-lg);">Jornada de Transformação em 5 Meses</p>
+
+                <div class="timeline">
+                    <!-- Etapa 1 -->
+                    <div class="timeline-item left">
+                        <div class="card">
+                            <h3 class="text-accent">Fase 01: Governança & Sucessão</h3>
+                            <span style="font-size: 0.9rem; font-weight: 600; display: block;">Mês 1</span>
+                            
+                            <ul>
+                                <li><i class="fas fa-check text-accent"></i>Criação do Conselho Familiar e mediação de conflitos iniciais.</li>
+                                <li><i class="fas fa-check text-accent"></i>Definição formal do Organograma e responsabilidades (1ª e 2ª geração).</li>
+                                <li><i class="fas fa-check text-accent"></i>Estabelecimento do "Acordo de Sócios" moral para tomada de decisão.</li>
+                            </ul>
+                            <span class="phase-price">Investimento: R$ 8.000,00</span>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 2 -->
+                    <div class="timeline-item right">
+                        <div class="card">
+                            <h3 class="text-accent">Fase 02: Engenharia de Processos</h3>
+                            <span style="font-size: 0.9rem; font-weight: 600; display: block;">Mês 2 e 3</span>
+                            
+                            <ul>
+                                <li><i class="fas fa-check text-accent"></i>Mapeamento profundo do chão de fábrica (produção).</li>
+                                <li><i class="fas fa-check text-accent"></i>Criação de Fichas Técnicas e POPs para padronização e escala.</li>
+                                <li><i class="fas fa-check text-accent"></i>Estruturação do DRE Gerencial e preparação tributária para 2026.</li>
+                            </ul>
+                            <span class="phase-price">Investimento: R$ 12.000,00</span>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 3 -->
+                    <div class="timeline-item left">
+                        <div class="card">
+                            <h3 class="text-accent">Fase 03: Comercial & CRM</h3>
+                            <span style="font-size: 0.9rem; font-weight: 600; display: block;">Mês 4</span>
+
+                            <ul>
+                                <li><i class="fas fa-check text-accent"></i>Implantação de CRM para gestão da carteira de eventos.</li>
+                                <li><i class="fas fa-check text-accent"></i>Profissionalização do WhatsApp: scripts de triagem e fluxos.</li>
+                                <li><i class="fas fa-check text-accent"></i>Treinamento da equipe comercial nas novas ferramentas.</li>
+                            </ul>
+                            <span class="phase-price">Investimento: R$ 8.000,00</span>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 4 -->
+                    <div class="timeline-item right">
+                        <div class="card">
+                            <h3 class="text-accent">Fase 04: Entrega & Autonomia</h3>
+                            <span style="font-size: 0.9rem; font-weight: 600; display: block;">Mês 5</span>
+                            
+                            <ul>
+                                <li><i class="fas fa-check text-accent"></i>Validação final dos indicadores de performance (KPIs).</li>
+                                <li><i class="fas fa-check text-accent"></i>Acompanhamento assistido da execução dos novos processos.</li>
+                                <li><i class="fas fa-check text-accent"></i>Passagem de bastão oficial para a gestão autônoma.</li>
+                            </ul>
+                            <span class="phase-price" style="font-size: 0.9rem; font-weight: 400;">(Incluso no valor global)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investimento -->
+        <section>
+            <div class="container fade-in-section">
+                <h2 style="text-align: center;">Investimento & Condições</h2>
+                
+                <div class="investment-grid">
+                    <!-- Valor Total -->
+                    <div class="card" style="text-align: center; justify-content: center;">
+                        <h3>Investimento Total</h3>
+                        <div class="price-tag">R$ 28.000,00</div>
+                        <p style="color: var(--text-muted);">Projeto Completo (5 Meses)</p>
+                    </div>
+
+                    <!-- Condições -->
+                    <div class="card">
+                        <h3 class="text-accent" style="margin-bottom: 1rem;">Facilidades de Pagamento</h3>
+                        <ul style="list-style: none; color: var(--text-muted);">
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle text-accent" style="margin-right: 10px;"></i>
+                                Entrada de 30% (Início imediato)
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle text-accent" style="margin-right: 10px;"></i>
+                                Saldo em 5 parcelas mensais
+                            </li>
+                            <li style="margin-bottom: 1rem; display: flex; align-items: center;">
+                                <i class="fas fa-check-circle text-accent" style="margin-right: 10px;"></i>
+                                Acompanhamento quinzenal presencial/online
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--space-xl);">
+                    <a href="https://wa.me/5562984002840" class="btn-cta" aria-label="Aprovar Proposta via WhatsApp">
+                        <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Aprovar Proposta
+                    </a>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">Ao clicar, você será direcionado ao WhatsApp do Consultor.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/Clebito2/ConsultoriaLive/main/Logo%20live%20oficial-21.png" alt="Live Consultoria" class="footer-logo">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                &copy; 2025 Live Consultoria. Alta performance começa com atitude.<br>
+                Desenvolvido com excelência técnica.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Intersection Observer para Animações de Entrada (Fade-In)
+            const fadeObserverOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const fadeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Anima apenas uma vez
+                });
+            }, fadeObserverOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                fadeObserver.observe(section);
+            });
+
+            // 2. Intersection Observer Específico para a Timeline (Sequencial)
+            const timelineObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                timelineObserver.observe(item);
+            });
+
+            // 3. Header Dinâmico (Scroll Effect)
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
